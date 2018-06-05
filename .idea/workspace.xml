@@ -4,12 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/../magento2-cms-override/Block/Override.php" line="42" mnemonic="0" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e97d2e92-ae40-4622-8fbf-a79b6f2cf440" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/code/InteractOne/CMSOverride/etc/frontend/routes.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/code/InteractOne/CMSOverride/etc/module.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/code/InteractOne/CMSOverride/registration.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/InteractOne/CMSOverride/registration.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/code/InteractOne/CMSOverride/view/frontend/layout/cms_index_index.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/InteractOne/CMSOverride/view/frontend/layout/default.xml" afterDir="false" />
-    </list>
+    <list default="true" id="e97d2e92-ae40-4622-8fbf-a79b6f2cf440" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -584,17 +579,17 @@
       <workItem from="1525206197624" duration="407000" />
       <workItem from="1525206655200" duration="504000" />
       <workItem from="1528133282787" duration="340000" />
-      <workItem from="1528214249863" duration="1119000" />
+      <workItem from="1528214249863" duration="1834000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54815000" />
+    <option name="totallyTimeSpent" value="55530000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1617" height="1062" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29063097" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29063097" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -603,7 +598,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32988358" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.40411702" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.40411702" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
