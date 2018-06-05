@@ -1,0 +1,1 @@
+/var/www/html/magento-local/vendor/magento/module-checkout/view/frontend/web/js/sidebar.js

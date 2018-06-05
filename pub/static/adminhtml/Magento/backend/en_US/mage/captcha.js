@@ -1,0 +1,1 @@
+/var/www/html/magento-local/lib/web/mage/captcha.js

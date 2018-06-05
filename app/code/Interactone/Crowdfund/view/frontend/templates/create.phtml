@@ -1,0 +1,138 @@
+<?php $helperConfig = $this->helper('Interactone\Crowdfund\Helper\Config'); ?>
+
+<div id="area-created-campaign">
+    <form class="form" action="/crowdfund/campaigns/create/" method="POST" id="campignForm"
+          data-mage-init='{"validation":{}}' data-hasrequired="* Required Fields" enctype="multipart/form-data">
+        <?php echo $this->getChildHtml('crowdfund_protypes_product_list') ?>
+
+        <h2><?php echo __('Campaign Information') ?></h2>
+        <fieldset class="fieldset">
+
+            <!-- Name -->
+            <div class="field required">
+                <label for="number" class="label">
+                    <span><?php /* @escapeNotVerified */
+                        echo __('Name') ?></span>
+                </label>
+
+                <div class="control">
+                    <input
+                            data-validate='{"required":true,"minlength":5, "maxlength" : 100}'
+                            name="name"
+                            type="text"
+                            class="input-text"
+                    >
+                </div>
+            </div>
+
+            <!-- Image -->
+            <div class="field required">
+                <label for="image" class="label">
+                    <span><?php /* @escapeNotVerified */
+                        echo __('Upload image') ?></span>
+                </label>
+
+                <div class="control">
+                    <input name="image" data-validate='{"required":true}' id="image" title="<?php /* @escapeNotVerified */ echo __('image') ?>" type="file" />
+                </div>
+            </div>
+
+            <!-- Description -->
+            <div class="field required">
+                <label for="number" class="label">
+                    <span><?php /* @escapeNotVerified */
+                        echo __('Description') ?></span>
+                </label>
+
+                <div class="control">
+                    <textarea data-validate='{"required":true}' name="description" type="text"
+                              class="input-text"></textarea>
+                </div>
+            </div>
+
+            <!-- Price -->
+            <div class="field required">
+                <label for="number" class="label">
+                    <span><?php /* @escapeNotVerified */
+                        echo __('Price') ?></span>
+                </label>
+
+                <div class="control">
+                    <input data-validate='<?php echo $block->getValidateJsonPrice() ?>' name="price" type="number"
+                           class="input-text required-profit">
+                    <?php echo $block->getHelperText('price') ?>
+                </div>
+            </div>
+
+            <!-- Goal -->
+            <div class="field required">
+                <label for="number" class="label">
+                    <span><?php /* @escapeNotVerified */
+                        echo __('Goal') ?></span>
+                </label>
+
+                <div class="control">
+                    <input data-validate='<?php echo $block->getValidateJsonGoal() ?>' name="goal" type="number"
+                           class="input-text required-profit">
+                    <?php echo $block->getHelperText('goal') ?>
+                </div>
+            </div>
+
+            <!-- Length (Days) -->
+            <div class="field required">
+                <label for="number" class="label">
+                    <span><?php /* @escapeNotVerified */
+                        echo __('Length (Days)') ?></span>
+                </label>
+
+                <div class="control">
+                    <input data-validate='<?php echo $block->getValidateJsonLengthDay() ?>' name="length" type="number"
+                           class="input-text">
+                    <?php echo $block->getHelperText('length') ?>
+
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="number" class="label">
+                    <span><?php /* @escapeNotVerified */
+                        echo __('Estimated profit') ?></span>
+                </label>
+
+                <div class="control">
+                    <span id="estimated_profit_result"> ...</span>
+                </div>
+            </div>
+        </fieldset>
+
+        <div class="actions-toolbar">
+            <div class="primary">
+                <button id="btn-create-campaign" type="submit" class="action submit primary" disabled
+                        title="<?php /* @escapeNotVerified */
+                        echo __('Create') ?>">
+                    <span><?php /* @escapeNotVerified */
+                        echo __('Create') ?></span>
+                </button>
+            </div>
+        </div>
+        <input type="hidden" name="profit" id="profit_value">
+    </form>
+</div>
+<script type="text/x-magento-init">
+{
+    "#area-created-campaign":
+    {
+        "Interactone_Crowdfund/js/campaign": {
+            "form": "#campignForm",
+            "estimated" : {
+                "urlProfit": "<?php echo $this->getUrl('crowdfund/campaigns/profit/') ?>",
+                "method": "POST",
+                "element_result" : "#estimated_profit_result"
+            },
+            "btn_submit": "#btn-create-campaign"
+         }
+    }
+}
+
+
+</script>

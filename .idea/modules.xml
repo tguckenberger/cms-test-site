@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../magentnto1local/.idea/magentnto1local.iml" filepath="$PROJECT_DIR$/../magentnto1local/.idea/magentnto1local.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/magento-local.iml" filepath="$PROJECT_DIR$/.idea/magento-local.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../magento2-cms-override/.idea/magento2-cms-override.iml" filepath="$PROJECT_DIR$/../magento2-cms-override/.idea/magento2-cms-override.iml" />
+    </modules>
+  </component>
+</project>

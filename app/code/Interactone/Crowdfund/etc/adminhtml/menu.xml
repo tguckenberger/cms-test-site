@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Interactone_Crowdfund::crowdfund" title="Crowdfund" translate="title" module="Interactone_Crowdfund" sortOrder="99" parent="Magento_Backend::stores" resource="Interactone_Crowdfund::crowdfund"/>
+        <add id="Interactone_Crowdfund::campaigns" title="Campaign Products" module="Interactone_Crowdfund" sortOrder="10" parent="Interactone_Crowdfund::crowdfund" action="crowdfund/campaigns" resource="Interactone_Crowdfund::campaigns"/>
+        <add id="Interactone_Crowdfund::configuration" title="Configuration" module="Interactone_Crowdfund" sortOrder="99" parent="Interactone_Crowdfund::crowdfund" action="adminhtml/system_config/edit/section/crowdfunded" resource="Interactone_Crowdfund::crowdfund_configuration"/>
+    </menu>
+</config>

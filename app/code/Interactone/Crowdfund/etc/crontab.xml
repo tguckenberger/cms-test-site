@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <group id="default">
+        <job name="campaign_product_status" instance="Interactone\Crowdfund\Cron\Run" method="execute">
+            <schedule>0 0 */1 * *</schedule>
+            <!--<schedule>*/1 * * * *</schedule>-->
+        </job>
+        <job name="campaign_payment" instance="Interactone\Crowdfund\Cron\UpdatePaymentStatus" method="execute">
+            <schedule>0 */1 * * *</schedule>
+            <!--<schedule>*/1 * * * *</schedule>-->
+        </job>
+    </group>
+</config>

@@ -1,0 +1,24 @@
+{
+  "name": "interactone/crowdfund",
+  "description": "Allows crowdfunded products to be sold by users",
+  "type": "magento2-module",
+  "authors": [
+    {
+      "name": "InteractOne Devs",
+      "email": "iodevs@interactone.com"
+    }
+  ],
+  "require": {},
+  "version": "1.0.0",
+  "license": [
+    "OSL-3.0"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Interactone\\Crowdfund\\": ""
+    }
+  }
+}

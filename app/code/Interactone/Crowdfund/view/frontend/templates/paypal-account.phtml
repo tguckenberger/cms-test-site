@@ -1,0 +1,32 @@
+<?php
+/** @var \Interactone\Crowdfund\Block\Paypal\Customer $block */
+?>
+<div class="block block-paypal-account">
+    <div class="block-title"><strong><?php /* @escapeNotVerified */ echo $block->escapeHtmlAttr(__('Paypal Account')) ?></strong></div>
+    <form action="<?php echo $block->getSaveUrl() ?>"
+          method="post" id="form-validate"
+          enctype="multipart/form-data"
+          data-hasrequired="<?php /* @escapeNotVerified */ echo __('* Required Fields') ?>"
+          data-mage-init='{"validation":{}}'>
+        <?php echo $this->getBlockHtml('formkey')?>
+        <fieldset class="fieldset">
+            <div class="field field-name-firstname required">
+                <label class="label" for="paypal-account">
+                    <span><?php echo $block->escapeHtmlAttr(__('Paypal account')) ?></span>
+                </label>
+                <div class="control">
+                    <input type="text" id="paypal-account" name="paypal-account" class="input-text required-entry"
+                           value="<?php /* @escapeNotVerified */ echo $block->escapeHtmlAttr($block->getPayPalAccount()) ?>"
+                           data-validate="{required:true, 'validate-email':true}" aria-required="true">
+                </div>
+            </div>
+        </fieldset>
+        <div class="actions-toolbar">
+            <div class="primary">
+                <button type="submit" class="action save primary" title="Save">
+                    <span><?php echo $block->escapeHtmlAttr(__('Save')) ?></span>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

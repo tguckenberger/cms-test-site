@@ -1,0 +1,43 @@
+<?php
+/** @var Interactone\Crowdfund\Block\View $block */
+?>
+<?php $collection_product = $block->getProductPrototypes() ?>
+<div class="prototypes_product" id="prototypes_product_list">
+    <?php foreach ($collection_product as $product): ?>
+        <?php $productImage = $block->getImageProduct($product) ?>
+        <div class="item">
+            <img src="<?php echo $productImage ?>" class="product-image">
+            <div class="product-info">
+                <h3 class="product-name"><?php echo $product->getName() ?></h3>
+                <div class="product-price"><?php echo $block->getPriceProduct($product->getPrice()) ?></div>
+                <div class="actions">
+                    <button id="selected-<?php echo $product->getId() ?>" data-product-id="<?php echo $product->getId() ?>" class="action save primary" type="button">
+                        <?php echo __('Select') ?>
+                    </button>
+                </div>
+            </div>
+        </div>
+    <?php endforeach; ?>
+    <input type="hidden" class="input-text" name="product_prototypes_id" id="product_prototypes_id">
+</div>
+<script>
+    require(['jquery'], function($){
+        $(document).ready(function () {
+            removeItemActive('#prototypes_product_list .item');
+            $( "#prototypes_product_list" ).on("click","button", function(event) {
+                removeItemActive('#prototypes_product_list .item');
+                $(this).closest('.item').addClass('active');
+                $('#product_prototypes_id').val($(this).attr('data-product-id'));
+            });
+        });
+
+        function removeItemActive(elm_area) {
+            $(elm_area).each(function (idx, elm){
+                if($(this).hasClass('active')){
+                    $(this).removeClass('active');
+                }
+            });
+
+        }
+    });
+</script>

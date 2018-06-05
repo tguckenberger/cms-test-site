@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Interactone_Crowdfund::css/campaign.css" />
+    </head>
+    <referenceContainer name="content">
+        <block class="Interactone\Crowdfund\Block\Create" name="crowdfund_campaigns_create" template="Interactone_Crowdfund::create.phtml">
+            <block class="Interactone\Crowdfund\Block\Create" name="crowdfund_protypes_product_list" template="Interactone_Crowdfund::create/product/list.phtml" />
+        </block>
+    </referenceContainer>
+</page>

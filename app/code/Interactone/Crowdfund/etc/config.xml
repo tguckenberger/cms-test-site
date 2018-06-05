@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <crowdfunded>
+            <general>
+                <campaign_category_id>1</campaign_category_id>
+                <prototype_parent_category_id>3</prototype_parent_category_id>
+                <minimum_goal>1</minimum_goal>
+                <maximum_goal>200</maximum_goal>
+                <cut_for_site_owner>5</cut_for_site_owner>
+                <minimum_price>13</minimum_price>
+                <maximum_price>5600</maximum_price>
+                <minimum_length>1</minimum_length>
+                <maximum_length>60</maximum_length>
+            </general>
+            <image>
+                <file_types><![CDATA[jpg,jpeg,png,gif]]></file_types>
+                <file_size>1024</file_size>
+            </image>
+        </crowdfunded>
+    </default>
+</config>

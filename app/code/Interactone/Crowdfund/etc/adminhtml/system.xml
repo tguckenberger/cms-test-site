@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="interactone_crowdfunded" translate="label" sortOrder="170">
+            <label>InteractOne</label>
+        </tab>
+        <section id="crowdfunded" translate="label" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Crowdfunded</label>
+            <tab>interactone_crowdfunded</tab>
+            <resource>Interactone_Crowdfunded::crowdfunded_config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>General Options</label>
+                <field id="campaign_category_id" translate="label" type="text" sortOrder="1" showInDefault="1"
+                       showInWebsite="0" showInStore="0">
+                    <label>Campaign Category Id</label>
+                </field>
+                <field id="prototype_parent_category_id" translate="label" type="text" sortOrder="1" showInDefault="1"
+                       showInWebsite="0" showInStore="0">
+                    <label>Prototype Parent Category Id</label>
+                </field>
+                <field id="cut_for_site_owner" translate="label" type="text" sortOrder="1" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Cut for Site Owner (%)</label>
+                    <comment>Use Estimated profit campaign. (%)</comment>
+                </field>
+                <field id="minimum_goal" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0"
+                       showInStore="1">
+                    <label>Minimum Goal</label>
+                </field>
+                <field id="maximum_goal" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0"
+                       showInStore="1">
+                    <label>Maximum Goal</label>
+                </field>
+                <field id="product_attribute_set" translate="label" type="select" sortOrder="1" showInDefault="1"
+                       showInWebsite="0" showInStore="0">
+                    <label>Product Attribute Set</label>
+                    <source_model>\Magento\Catalog\Model\Product\AttributeSet\Options</source_model>
+                    <comment>for campaign products</comment>
+                </field>
+                <field id="minimum_price" translate="label" type="text" sortOrder="1" showInDefault="1"
+                       showInWebsite="0" showInStore="1">
+                    <label>Minimum Price</label>
+                </field>
+                <field id="maximum_price" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0"
+                       showInStore="1">
+                    <label>Maximum Price</label>
+                </field>
+                <field id="minimum_length" translate="label" type="text" sortOrder="1" showInDefault="1"
+                       showInWebsite="0" showInStore="1">
+                    <label>Minimum Length</label>
+                    <comment>days</comment>
+                </field>
+                <field id="maximum_length" translate="label" type="text" sortOrder="1" showInDefault="1"
+                       showInWebsite="0" showInStore="1">
+                    <label>Maximum Length</label>
+                    <comment>days</comment>
+                </field>
+            </group>
+            <group id="image" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Image Upload Options</label>
+                <field id="file_types" translate="label" type="text" sortOrder="1" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Allowed file types</label>
+                    <comment><![CDATA[each type separated by commas. Example: jpg, jpeg, gif, png]]></comment>
+                </field>
+                <field id="file_size" translate="label" type="text" sortOrder="1" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>File size</label>
+                    <comment><![CDATA[Example: 1024 (KB)]]></comment>
+                </field>
+            </group>
+            <group id="paypal" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Paypal Options</label>
+                <field id="client_id" translate="label" type="obscure" sortOrder="1" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Client ID</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                </field>
+                <field id="secret" translate="label" type="obscure" sortOrder="2" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Secret</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                </field>
+                <!--<field id="signature" translate="label" type="text" sortOrder="3" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Signature</label>
+                </field>-->
+                <field id="mode" translate="label" type="select" sortOrder="4" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Mode</label>
+                    <source_model>Interactone\Crowdfund\Model\Config\Source\Mode</source_model>
+                </field>
+            </group>
+            <group id="email" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Email Options</label>
+                <field id="sender_email_identity" translate="label comment" type="select" sortOrder="1"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Email Sender</label>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Identity</source_model>
+                </field>
+                <field id="success" translate="label comment" type="select" sortOrder="1" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Campaign Success</label>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+                </field>
+                <field id="failure" translate="label comment" type="select" sortOrder="1" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Campaign Failure</label>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+                </field>
+                <field id="paid" translate="label comment" type="select" sortOrder="1" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Campaign Paid</label>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

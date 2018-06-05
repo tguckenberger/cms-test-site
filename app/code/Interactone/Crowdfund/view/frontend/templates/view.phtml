@@ -1,0 +1,63 @@
+<?php
+/* helper \Interactone\Crowdfund\Helper\Data */
+$helper = $this->helper('Interactone\Crowdfund\Helper\Data');
+?>
+<div class="actions-toolbar">
+    <div class="primary">
+        <a href="<?php echo $this->getUrl('crowdfund/campaigns/create') ?>" class="action submit primary" title="<?php /* @escapeNotVerified */ echo __('Add new Campaign') ?>">
+            <span><?php /* @escapeNotVerified */ echo __('Add new Campaign') ?></span>
+        </a>
+    </div>
+</div>
+<div class="product-campaign-container">
+    <?php  $_products = $block->getProductCampaignByIdCustomer(); ?>
+    <?php if ($_products && $_products->getSize() > 0): ?>
+        <div class="table-wrapper my-product-campaign">
+            <table class="data table table-order-items history" id="my-product-campaign-table">
+                <caption class="table-caption"><?php echo __('Your Campaign Product') ?></caption>
+                <thead>
+                <tr>
+                    <th scope="col" class="col thumbnail"></th>
+                    <th scope="col" class="col name"><?php echo __('Name') ?></th>
+                    <th scope="col" class="col"><?php echo __('Description') ?></th>
+                    <th scope="col" class="col"><?php echo __('Goals') ?></th>
+                    <th scope="col" class="col "><?php echo __('Profit') ?></th>
+                    <th scope="col" class="col "><?php echo __('Deadline') ?></th>
+                    <th scope="col" class="col "><?php echo __('Sku Parent') ?></th>
+                    <th scope="col" class="col "><?php echo __('Status') ?></th>
+                </tr>
+                </thead>
+                <tbody>
+
+                <?php foreach ($_products as $product): ?>
+                    <tr>
+                        <td class="col thumbnail">
+                            <img src="<?php echo $block->getImageProduct($product,'category_page_list',80) ?>" class="thumbnail">
+                        </td>
+                        <td class="col name">
+                            <a href="<?php echo $product->getProductUrl(); ?>" title="<?php echo $product->getName() ?>">
+                                <?php echo $product->getName() ?>
+                            </a>
+                        </td>
+                        <td class="col description"><?php echo substr($product->getDescription(),0,100) ?></td>
+                        <td class="col goal"><?php echo $block->getGoals($product) ?></td>
+                        <td class="col profit">
+                            <?php echo $this->helper('Magento\Framework\Pricing\Helper\Data')->currency(number_format($product->getCampaignProfit(),2),true,false); ?>
+                        </td>
+                        <td class="col end-date">
+                            <?php echo $helper->getTimeAccordingToTimeZone($product->getCampaignEndDate()) ?>
+                        </td>
+                        <td class="col sku-parent"><?php echo $product->getCampaignCreateFrom() ?></td>
+                        <td class="col status"><?php echo $product->getCampaignStatus() ?></td>
+                    </tr>
+                <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+        <?php if ($block->getPagerHtml()): ?>
+            <div class="order-products-toolbar toolbar bottom"><?php echo $block->getPagerHtml();?></div>
+        <?php endif ?>
+    <?php else: ?>
+        <div class="message info empty"><span><?php echo __('You have no products'); ?></span></div>
+    <?php endif ?>
+</div>

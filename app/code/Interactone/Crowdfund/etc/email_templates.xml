@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+    <template id="crowdfunded_email_success" label="Campaign Success" file="campaign_success.html" type="html" module="Interactone_Crowdfund" area="frontend"/>
+    <template id="crowdfunded_email_failure" label="Campaign Failure" file="crowdfunded_failure.html" type="html" module="Interactone_Crowdfund" area="frontend"/>
+    <template id="crowdfunded_email_paid" label="Campaign Paid" file="crowdfunded_paid.html" type="html" module="Interactone_Crowdfund" area="frontend"/>
+</config>
